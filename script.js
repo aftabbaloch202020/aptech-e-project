@@ -75,3 +75,44 @@ function closeAbout() {
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
   });
+
+
+
+
+
+// Letters and their classes
+const letters = [
+  { char: 'F', class: 'f' },
+  { char: 'E', class: 'e' },
+  { char: 'S', class: 's' },
+  { char: 'T', class: 't' },
+  { char: 'I', class: 'i' },
+  { char: 'F', class: 'f2' },
+  { char: 'Y', class: 'y' },
+];
+
+const typingElement = document.getElementById("typing");
+let index = 0;
+const typingSpeed = 300; 
+
+function typeLetter() {
+  if (index < letters.length) {
+    const span = document.createElement('span');
+    span.textContent = letters[index].char;
+    span.classList.add(letters[index].class);
+    typingElement.appendChild(span);
+    index++;
+    setTimeout(typeLetter, typingSpeed);
+  } else {
+
+    setTimeout(() => {
+      const loader = document.getElementById("loader");
+      loader.classList.add("fade-out");
+      setTimeout(() => {
+        document.getElementById("main-content").style.display = "block";
+      }, 1000); 
+    }, 1000);
+  }
+}
+
+window.addEventListener("load", typeLetter);
