@@ -1120,3 +1120,52 @@ button{
   /* ================= FOOTER ================= */
 
 
+
+
+/* Fullscreen loader */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111; /* dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-size: 60px;
+  font-weight: 900;
+  font-family: monospace;
+}
+
+/* Cursor effect */
+#typing::after {
+  content: '|';
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Fade out loader smoothly */
+#loader.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+/* Individual Letter Colors */
+.festify-logo .f  { color: #facc15; }  
+.festify-logo .e  { color: #22c55e; }  
+.festify-logo .s  { color: #38bdf8; }  
+.festify-logo .t  { color: #a78bfa; } 
+.festify-logo .i  { color: #fb7185; }  
+.festify-logo .f2 { color: #f97316; }  
+.festify-logo .y  { color: #10b981; }  
