@@ -1144,6 +1144,7 @@ button{
   content: '|';
   margin-left: 5px;
   animation: blink 0.7s infinite;
+    color:white;
 }
 
 @keyframes blink {
@@ -1169,3 +1170,4 @@ button{
 .festify-logo .i  { color: #fb7185; }  
 .festify-logo .f2 { color: #f97316; }  
 .festify-logo .y  { color: #10b981; }  
+
